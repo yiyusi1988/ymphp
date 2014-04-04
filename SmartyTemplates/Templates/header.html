@@ -1,0 +1,20 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><*$pageTitle*>_<*$smarty.const.SITENAME*></title>
+<link href="<*$smarty.const.MAINURL*>/css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="<*$smarty.const.MAINURL*>/js/common/jquery.min.js"></script>
+<script type="text/javascript" src="<*$smarty.const.MAINURL*>/js/common/function.js"></script>
+<script type="text/javascript" src="<*$smarty.const.MAINURL*>/js/My97DatePicker/WdatePicker.js"></script>
+</head>
+
+<body>
+<div class="header_logo">
+	<div class="header_box">
+      <div class="logo"><a href="<*seturl*>"><img src="<*$smarty.const.MAINURL*>/images/common/logo.png" width="290" height="85" /></a></div>
+      <*if $userInfo.uid*>
+      <div class="links"> <a href="<*seturl _m=account _c=index*>"><*$userInfo.email*></a> <a>帮助中心</a> <a href="<*seturl _m=default _c=index _a=loginout*>">退出登录</a> </div>
+      <*/if*>
+  	</div>
+</div>

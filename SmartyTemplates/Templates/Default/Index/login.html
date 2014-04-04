@@ -1,0 +1,72 @@
+<*include file="header.html"*>
+<link href="<*$smarty.const.MAINURL*>/css/login.css" rel="stylesheet" type="text/css" />
+<div id="page">
+    <div class="login">
+    <ul>
+        <li class="clearfix">
+            <div class="title">用户名</div>
+            <div class="content" id="user_con">
+                <input name="userName" type="text" class="inputtextone" id="input_text_one" />
+            </div>
+            <div id="user_tip" style="display:none;" class="tip error" name="userName_tip"></div>
+        </li>
+        <li class="clearfix">
+            <div class="title">密码</div>
+            <div class="content" id="pass_con">
+                <input name="passWord" type="password" class="inputtextone" id="input_text_two">
+            </div>
+            <div id="pass_tip" style="display:none;" class="tip error" name="passWord_tip"></div>
+        </li>
+        <li class="clearfix checkCode" style="display:none;">
+            <div class="title">验证码</div>
+            <div class="content" id="code_con">
+                <input name="checkCode" type="text" class="inputtexttwo" id="input_text_three" />
+            </div>
+            <div id="checkSpan" class="checkSpan"></div>
+            <div id="code_tip" style="display:none;" class="tip error" name="checkCode_tip"></div>
+        </li>
+    </ul>
+
+    <div class="button_ele">
+        <div class="clearfix">
+            <div class="l">
+                <input type="button" id="submit" class="button_one">
+            </div>
+            <div class="l" style="margin-left:20px;">
+                <a href="register" class="button_four" onMouseDown="this.className='click_button'" onMouseUp="this.className='button_four'"></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<!--page end-->
+<script type="text/javascript">
+$(function(){
+	$("#submit").click(function(){
+		var email=$("#input_text_one").val();
+		var passwd=$("#input_text_two").val();
+		if(email==''||passwd==''){
+			alert('用户名或密码不能为空!');
+			return false;
+			}
+		$.post("<*seturl _m=default _c=index _a=login*>",{email:email,passwd:passwd},function(result){
+    		if(result.code=='000'){
+				alert(result.msg);
+				location.href='<*seturl*>';
+				}else{
+					alert(result.msg);
+					$("#input_text_two").val('')
+					}
+  },'json');
+		})
+	})
+document.onkeydown=function(event){
+  e = event ? event :(window.event ? window.event : null);
+  if(e.keyCode==13){
+   //执行的方法
+   $("#submit").click();
+  }
+ };
+</script>
+<*include file="foot.html"*>

@@ -1,0 +1,395 @@
+<*include file="head_unlogin.html"*>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>注册</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css" />
+    <link href="css/login.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="http://testaos.behe.com/images/favicon.ico" media="screen" />
+    <style type="text/css">
+        html, body {
+            background: url(/images/login/reg_2.gif) repeat;
+            font-size: 12px;
+            font-family: "微软雅黑";
+            color: #444;
+        }
+        #urlUpIdOne,#urlUpIdTwo,#urlUpIdThree,#urlUpIdFour,#urlUpIdFive,#urlUpIdSix{display:none;}
+    </style>
+    <script src="js/lib/jquery-1.3.2.min.js" language="javascript" type="text/javascript"></script>
+    <script src="js/lib/jquery.ui.core.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+<div id="wrap">
+    <div id="header">   <div class="head" style="background:url(/images/login/login_bg_2.png) left no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="images/login/login_bg_2.png");_background:none;">  </div>
+</div>
+<div id="page" style="width:100%;">
+<div class="reg_one">
+    <div class="nav_1"></div>
+</div>
+<h1>添写账户信息</h1>
+<div class="reg_line"></div>
+<div class="page_content">
+    <table width="100%" border="0" class="form_five">
+        <tr>
+            <td width="10%" align="right">账户名</td>
+            <td width="43%"><div class="text_six" style="width:270px;"> <span>
+              <input name="userName" type="text" style="width:263px;" value="" maxlength=40/>
+              </span> </div></td>
+            <td width="10%" align="right">公司网址</td>
+            <td width="37%"><div class="text_six" style="width:270px;"> <span>
+              <input name="companyUrl" type="text" style="width:263px;" value="http://">
+              </span> </div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="43%" class="th20"><div id="checkUserTip" class="userName_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="37%" class="th20"><div id="companyUrlTip" class="companyUrl_tip"></div></td>
+        </tr>
+        <tr>
+            <td width="10%" align="right">密码</td>
+            <td width="43%"><div class="text_six" style="width:270px;"> <span>
+              <input name="passWord" type="password" style="width:263px;">
+              </span> </div></td>
+            <td width="10%" align="right">用户所在地</td>
+            <td width="37%"><div class="l" style="margin-top:-8px;">
+                <div class="input_xiala mt10" style="width:130px;" id="selectArea"><span>请选择国家</span></div>
+            </div>
+                <div class="l ml20" style="margin-top:-8px;">
+                    <div class="input_xiala mt10" id="selectProvice" style="width:120px;">
+                        <div id="treeArea"> <span>请选择省份</span> </div>
+                    </div>
+                </div>
+                <div class="clear"></div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="43%" class="th20"><div id="passWordTip" class="passWord_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="37%" class="th20"><div id="countryTip" class="errorText ml10"></div></td>
+        </tr>
+        <tr>
+            <td width="10%" align="right">确认密码</td>
+            <td width="43%"><div class="text_six" style="width:270px;"> <span>
+              <input name="passWord1" type="password" style="width:263px;">
+              </span> </div></td>
+            <td width="10%" align="right">邮编</td>
+            <td width="37%"><div class="text_six" style="width:270px;"> <span>
+              <input name="zipCode" type="text" style="width:263px;" maxlength="20">
+              </span> </div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="43%" class="th20"><div id="passWord1Tip" class="passWord1_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="37%" class="th20"><div id="zipCode" class="zipCode_tip"></div></td>
+        </tr>
+        <tr>
+            <td width="10%" align="right">账户类型</td>
+            <td width="43%"><input name="accountType" id="account_one" type="radio" checked value="2" />
+                广告主　
+                <input name="accountType" id="account_two" type="radio" value="3" />
+                代理商</td>
+            <td width="10%" align="right">公司地址</td>
+            <td width="37%"><div class="text_six" style="width:270px;"> <span>
+              <input name="companyAddress" type="text" style="width:263px;">
+              </span> </div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="43%" class="th20">&nbsp;</td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="37%" class="th20"><div id="companyAddressTip" class="companyAddress_tip"></div></td>
+        </tr>
+        <tr>
+            <td width="10%" align="right">公司名称</td>
+            <td width="43%"><div class="text_six" style="width:270px;"> <span>
+              <input name="companyName" type="text" style="width:263px;">
+              </span> </div></td>
+            <td width="10%" align="right">公司分类</td>
+            <td width="37%"><div class="l" style="margin-top:-8px;">
+                <div class="input_xiala mt10" style="width:130px;" id="company_class"><span>请选择行业分类</span></div>
+            </div>
+                <div class="l ml20" style="margin-top:-8px;">
+                    <div class="input_xiala mt10" style="width:120px;" id="company_class1"><span>请选择行业子类</span></div>
+                </div>
+                <div class="clear"> </div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="43%" class="th20"><div id="companyNameTip" class="companyName_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="37%" class="th20"><div id="companyCateIdTip" class="errorText ml10"></div></td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <div class="txZz">
+                    <div class="txZz_tit">
+                        <h3>广告资质</h3>
+                    </div>
+                    <div class="txZz_titCon">
+                        <a class="txSh_upload" href="javascript:void(0);" id="upload_one"><span class="txSh_uploadIcon"></span>上传法人身份证</a>
+                        <input name="" type="hidden" id="upload_one_logo">
+                        <div class="txSh_del mr10" id="upload_one_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                        <a class="txSh_upload" href="javascript:void(0);"id="upload_two"><span class="txSh_uploadIcon"></span>上传营业执照</a>
+                        <input name="" type="hidden" id="upload_two_logo">
+                        <div class="txSh_del mr10" id="upload_two_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                        <a class="txSh_upload" href="javascript:void(0);" id="upload_three"><span class="txSh_uploadIcon"></span>上传ICP</a>
+                        <input name="" type="hidden" id="upload_three_logo">
+                        <div class="txSh_del mr10" id="upload_three_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                        <p class="txZz_cur">上传资质以获得腾讯优质流量，审核通过后即可使用腾讯流量。</p>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="wenjian_one" class="none">
+            <td colspan="4">
+                <div class="txZz">
+                    <div class="txZz_tit">
+                        <h3>医疗资质审核</h3>
+                    </div>
+                    <div class="txZz_titCon">
+                        <a class="txZz_but2" href="javascript:void(0);"><span class="txSh_uploadIcon"></span><span id="upload_four">医疗机构执业许可证</span></a>
+                        <input name="" type="hidden" id="upload_four_logo">
+                        <div class="txSh_del mr10" id="upload_four_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                        <a class="txZz_but1" href="javascript:void(0);"><span class="txSh_uploadIcon"></span><span id="upload_five">医疗广告审查证明</span></a>
+                        <input name="" type="hidden" id="upload_five_logo">
+                        <div class="txSh_del mr10" id="upload_five_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr id="wenjian_two" class="none">
+            <td colspan="4">
+                <div class="txZz">
+                    <div class="txZz_tit">
+                        <h3>游戏资质审核</h3>
+                    </div>
+                    <div class="txZz_titCon">
+                        <a class="txZz_but3" href="javascript:void(0);"><span class="txSh_uploadIcon"></span><span id="upload_six">网络文化经营许可证</span></a>
+                        <input name="" type="hidden" id="upload_six_logo">
+                        <div class="txSh_del mr10" id="upload_six_text" style="display:none;"><a class="txSh_delIcon" href="javascript:void(0);"></a>资质文件－001</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<h1>添写联系信息</h1>
+<div class="reg_line"></div>
+<div class="page_content">
+    <table width="100%" border="0" class="form_five">
+        <tr>
+            <td width="10%" align="right">姓名</td>
+            <td width="15%"><div class="text_six" style="width:130px;"> <span>
+              <input type="text" name="realName" style="width:123px;">
+              </span> </div></td>
+            <td width="10%" align="right">手机</td>
+            <td width="20%"><div class="text_six" style="width:130px;"> <span>
+              <input type="text" name="mobile" style="width:123px;">
+              </span> </div></td>
+            <td width="10%" align="right">公司电话</td>
+            <td width="35%"><div class="clearfix">
+                <div class="l">
+                    <div class="text_six" style="width:40px;"> <span>
+                  <input type="text" name="companyPhone_area" style="width:33px;">
+                  </span> </div>
+                </div>
+                <div class="l mt15 ml10">-</div>
+                <div class="l ml10">
+                    <div class="text_six" style="width:70px;"> <span>
+                  <input type="text" name="companyPhone_board" style="width:63px;">
+                  </span> </div>
+                </div>
+                <div class="l mt15 ml10">-</div>
+                <div class="l ml10">
+                    <div class="text_six" style="width:40px;"> <span>
+                  <input type="text" name="companyPhone_extension" style="width:33px;">
+                  </span> </div>
+                </div>
+            </div></td>
+        </tr>
+        <tr>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="15%" class="th20"><div id="realNameTip" class="realName_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="20%" class="th20"><div id="mobileTip" class="mobile_tip"></div></td>
+            <td width="10%" class="th20">&nbsp;</td>
+            <td width="35%" class="th20"><div id="companyPhoneTip" class="companyPhone_area_tip companyPhone_board_tip companyPhone_extension_tip"></div></td>
+        </tr>
+    </table>
+</div>
+<div class="reg_line"></div>
+<div class="reg_xie">
+    <input id="regPos" type="checkbox" checked/>
+    我已经阅读并同意《使用协议》 </div>
+<div class="reg_xie1">
+    <div id="regPosTip"></div>
+</div>
+<div class="reg_submit"> <a href="javascript:void(0);" id="submit" style="color:#fff;" class="button_two" onMouseDown="this.className='button_two_click'" onMouseUp="this.className='button_two'">立即注册</a> &nbsp;&nbsp;<a href="login" class="button_three" style="color:#fff;" onMouseDown="this.className='button_three_click'" onMouseUp="this.className='button_three'">放弃注册</a> </div>
+<div class="page_bottom">
+    <div id="footer">         <div id="copy_right">Copyright © 2012 behe.com All rights reserved. 北京璧合广告有限公司　版权所有　京ICP备12047590号　京公网安备11010502022744号 </div>
+    </div>
+</div>
+</div>
+</div>
+<script src="js/common/Loose.js" language="javascript" type="text/javascript"></script>
+<script type="text/javascript" src="js/lib/ajaxfileupload.js" language="javascript"></script>
+<script src="js/com/select/jquery-select-two.js" language="javascript" type="text/javascript"></script>
+<script src="js/lib/md5.js" language="javascript" type="text/javascript"></script>
+<script src="js/com/validate/formValidatorRegister.js" language="javascript" type="text/javascript"></script>
+<script src="js/module/register.js" language="javascript" type="text/javascript"></script>
+<img src="http://rtb.behe.com/tracker/t.gif?si=117" style="width:0px;height:0px;position:absolute;top:0px;left:0px;">
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.fn.bindUploadAgent();
+        $(".txSh_delIcon").bind("click",function(){
+            $(this).parent().hide();
+        });
+    });
+    $.fn.bindUploadAgent=function(){
+        $.copyUpFile("#upload_one",'urlUpIdOne',"#upload_one_logo");
+        $('#urlUpIdOne').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdOne');
+        });
+        $.copyUpFile("#upload_two",'urlUpIdTwo',"#upload_two_logo");
+        $('#urlUpIdTwo').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdTwo');
+        });
+        $.copyUpFile("#upload_three",'urlUpIdThree',"#upload_three_logo");
+        $('#urlUpIdThree').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdThree');
+        });
+        $.copyUpFile("#upload_four",'urlUpIdFour',"#upload_four_logo");
+        $('#urlUpIdFour').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdFour');
+        });
+        $.copyUpFile("#upload_five",'urlUpIdFive',"#upload_five_logo");
+        $('#urlUpIdFive').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdFive');
+        });
+        $.copyUpFile("#upload_six",'urlUpIdSix',"#upload_six_logo");
+        $('#urlUpIdSix').change(function(){
+            $.fn.uploadAgentLogo('urlUpIdSix');
+        });
+    }
+    $.fn.uploadAgentLogo=function(ele){
+        $.ajaxFileUpload({
+            url:'register/ajax-upload-account-img/',
+            secureuri:true,
+            fileElementId:ele,
+            dataType:'json',
+            data:{type:ele},
+            success:function(data){
+                if(ele=="urlUpIdOne"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_one_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_one_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_one",'urlUpIdOne',"#upload_one_logo");
+                    $('#urlUpIdOne').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdOne');
+                    });
+                    $("#upload_one_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_one_logo").val('');
+                    });
+                }else if(ele=="urlUpIdTwo"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_two_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_two_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_two",'urlUpIdTwo',"#upload_two_logo");
+                    $('#urlUpIdTwo').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdTwo');
+                    });
+                    $("#upload_two_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_two_logo").val('');
+                    });
+                }else if(ele=="urlUpIdThree"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_three_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_three_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_three",'urlUpIdThree',"#upload_three_logo");
+                    $('#urlUpIdThree').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdThree');
+                    });
+                    $("#upload_three_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_three_logo").val('');
+                    });
+                }else if(ele=="urlUpIdFour"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_four_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_four_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_four",'urlUpIdFour',"#upload_four_logo");
+                    $('#urlUpIdFour').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdFour');
+                    });
+                    $("#upload_four_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_four_logo").val('');
+                    });
+                }else if(ele=="urlUpIdFive"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_five_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_five_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_five",'urlUpIdFive',"#upload_five_logo");
+                    $('#urlUpIdFive').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdFive');
+                    });
+                    $("#upload_five_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_five_logo").val('');
+                    });
+                }else if(ele=="urlUpIdSix"){
+                    if(data.status=='error'){
+                        alert("格式不正确！");
+                    }else{
+                        $("#upload_six_text").html('<a class="txSh_delIcon" href="javascript:void(0);"></a>'+data.fileName).show();
+                        $("#upload_six_logo").val('upload/accountLogo'+data.fileUrl);
+                    }
+                    $.copyUpFile("#upload_six",'urlUpIdSix',"#upload_six_logo");
+                    $('#urlUpIdSix').change(function(){
+                        $.fn.uploadAgentLogo('urlUpIdSix');
+                    });
+                    $("#upload_six_text .txSh_delIcon").bind("click",function(){
+                        $(this).parent().hide();
+                        $("#upload_six_logo").val('');
+                    });
+                }
+
+            }
+        });
+    }
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-33709929-1']);
+    _gaq.push(['_setDomainName', 'behe.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+</body>
+</html>
+<!--page end-->
+<*include file="foot.html"*>

@@ -1,0 +1,45 @@
+<*include file="header.html"*>
+
+<div class="header_nav">
+  <div class="header_box">
+    <div class="nav">
+	  <ul>
+		<li class="n1 <*if $_mainName=='Default'*>current<*/if*>"><a href="<*seturl*>">首页</a></li>
+		<li class="n2 <*if $_mainName=='Active'*>current<*/if*>"><a href="<*seturl _m=active*>">广告活动</a></li>
+		<li class="n3 <*if $_mainName=='Report'*>current<*/if*>"><a href="<*seturl _m=report*>">报表中心</a></li>
+		<li class="n4 <*if $_mainName=='Monitor'*>current<*/if*>"><a href="<*seturl _m=monitor*>">监测设置</a></li>
+		<li class="n5 <*if $_mainName=='Marking'*>current<*/if*>"><a href="<*seturl _m=marking*>">营销工具</a></li>
+		<li class="n6 <*if $_mainName=='Account'*>current<*/if*>"><a href="<*seturl _m=account*>">账户管理</a></li>
+	  </ul>
+	</div>
+  </div>
+</div>
+<div class="header_s_nav">
+  <div class="header_box">
+	<div class="s_nav">
+	  <*if $_mainName=='Default'*>
+	  <a href="<*seturl*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>首页</a>
+	  <*/if*>
+	  <*if $_mainName=='Active'*>
+	  <a href="<*seturl _m=active*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>活动列表</a>
+	  <a href="<*seturl _m=active _c=order*>" <*if $_controllerName=='Order'*>class="on"<*/if*>>订单列表</a>
+	  <*/if*>
+	  <*if $_mainName=='Report'*>
+	  <a href="<*seturl _m=report*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>报表中心</a>
+	  <*/if*>
+	  <*if $_mainName=='Monitor'*>
+	  <a href="<*seturl _m=monitor*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>监测设置</a>
+	  <*/if*>
+	  <*if $_mainName=='Marking'*>
+	  <a href="<*seturl _m=marking*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>竞价宝</a>
+	  <a href="<*seturl _m=marking _c=optimize*>" <*if $_controllerName=='Optimize'*>class="on"<*/if*>>优化宝</a>
+	  <*/if*>
+	  <*if $_mainName=='Account'*>
+	  <a href="<*seturl _m=account*>" <*if $_controllerName=='Index'*>class="on"<*/if*>>基本信息</a>
+	  <a href="<*seturl _m=account _c=consume*>" <*if $_controllerName=='Consume'*>class="on"<*/if*>>账户消费</a>
+	  <a href="<*seturl _m=account _c=catemanage*>" <*if $_controllerName=='Catemanage'*>class="on"<*/if*>>分类管理</a>
+	  <a href="<*seturl _m=account _c=premissionmanage*>" <*if $_controllerName=='Premissionmanage'*>class="on"<*/if*>>权限管理</a>
+	  <*/if*>
+	</div>
+  </div>
+</div>
